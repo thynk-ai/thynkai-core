@@ -1,0 +1,45 @@
+{
+  "name": "@thynkai/core",
+  "version": "0.1.0",
+  "description": "Core protocol primitives for ThynkAI (TypeScript reference implementation).",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "docs": "typedoc --out docs/api src/index.ts",
+    "ci": "npm run typecheck && npm run lint && npm run format:check && npm run build && npm run test:coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typedoc": "^0.26.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.1.8"
+  }
+}
